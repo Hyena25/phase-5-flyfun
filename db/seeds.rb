@@ -11,9 +11,9 @@ Destination.destroy_all
 puts "begin seeding"
 
 puts "creating users..."
-user1 = User.create(full_name: 'Johnny Smith', username: "johnny123", email: "johnny@gmail.com", password_digest: "johnny")
-user2 = User.create(full_name: 'Brenda Lee', username: "brenda123", email: "brenda@gmail.com", password_digest: "brenda")
-user3 = User.create(full_name: 'Luis Lopez', username: "luis123", email: "luis@gmail.com", password_digest: "luis")
+user1 = User.create(full_name: 'Johnny Smith', username: "johnny123", email: "johnny@gmail.com", password: "johnny")
+user2 = User.create(full_name: 'Brenda Lee', username: "brenda123", email: "brenda@gmail.com", password: "brenda")
+user3 = User.create(full_name: 'Luis Lopez', username: "luis123", email: "luis@gmail.com", password: "luis")
 
 puts "creating destinations"
 destination1 = Destination.create(image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['travel']), title: "Great wall of China", location: "Beijing, China", description: "Huge wall" )

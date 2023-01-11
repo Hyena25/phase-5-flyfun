@@ -4,9 +4,9 @@ import Login from "./Login"
 function HomePage ({updateUser}){
     return(
         <>
-        {/* <h1> Is this working ?</h1> */}
-        <Login/>
-        <Signup/>
+            <h1> Home Page </h1>
+            <Login updateUser= {updateUser}/>
+            <Signup/>
         </>
     )
 }

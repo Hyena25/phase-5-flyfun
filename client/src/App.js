@@ -4,6 +4,7 @@ import HomePage from "./HomePage";
 import DestinationList from "./DestinationList";
 import ReviewList from "./ReviewList";
 import Profile from "./Profile";
+import Navbar from "./Navbar";
 
 function App() {
   const [destinationsData, setDestinationsData] = useState([])
@@ -39,14 +40,15 @@ function App() {
   // console.log(destinationsData)
 
   return (
-    <div>
+    <>
+       {userData.id ? <Navbar updateUser = {updateUser}/> : null}
       <Routes>
         <Route exact path= "/" element={<HomePage updateUser= {updateUser}/>}></Route>
         <Route path= "/destinations" element={<DestinationList/>}></Route>
         <Route path= "/reviews" element= {<ReviewList/>}></Route>
         <Route path= "/profile" element= {<Profile/>}></Route>
       </Routes>
-    </div>
+    </>
   )
 }
 
