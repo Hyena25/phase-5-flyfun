@@ -9,12 +9,12 @@ class DestinationsController < ApplicationController
     end
 
     def create
-        render json: Destination.create
+        render json: Destination.create!(destination_params), status: :created
     end
 
     private 
 
     def destination_params
-        params.permit()
+        params.permit(:image, :title, :location, :description)
     end
 end

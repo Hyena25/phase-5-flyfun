@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
   resources :reviews
-  resources :destinations
-  resources :users
+  resources :destinations, only: [:index, :show, :create]
+  resources :users, only: [:index, :show, :create]
 
   post '/login', to: 'sessions#create'
   delete '/logout', to:'sessions#delete'
