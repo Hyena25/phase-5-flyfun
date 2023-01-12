@@ -55,7 +55,7 @@ function App() {
       {/* {userData.id ? null : <NavbarHome updateUser = {updateUser}/>} */}
       <Routes>
         <Route exact path= "/" element={<HomePage userData={userData} updateUser= {updateUser}/>}></Route>
-        <Route path= "/destinations" element={<DestinationList userData={userData} destinationsData={destinationsData}/>}></Route>
+        <Route path= "/destinations" element={<DestinationList userData={userData} setDestinationsData={setDestinationsData} destinationsData={destinationsData}/>}></Route>
         <Route path= "/reviews" element= {<ReviewList/>}></Route>
         <Route path= "/profile" element= {<Profile/>}></Route>
         <Route path= "/about" element= {<About/>}></Route>
