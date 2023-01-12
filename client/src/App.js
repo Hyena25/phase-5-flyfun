@@ -5,6 +5,9 @@ import DestinationList from "./DestinationList";
 import ReviewList from "./ReviewList";
 import Profile from "./Profile";
 import Navbar from "./Navbar";
+import About from "./About";
+
+
 
 function App() {
   const [destinationsData, setDestinationsData] = useState([])
@@ -37,16 +40,25 @@ function App() {
       }
     })
   }
-  // console.log(destinationsData)
 
+  useEffect( () =>{
+    fetch ("/users/:id")
+    .then ( res => res.json())
+    .then (setUserData)
+  },[currentUser])
+
+  // console.log(destinationsData)
+  if(errors) return <h1>{errors}</h1>
   return (
     <>
-       {userData.id ? <Navbar updateUser = {updateUser}/> : null}
+      {userData.id ? <Navbar updateUser = {updateUser}/> : null}
+      {/* {userData.id ? null : <NavbarHome updateUser = {updateUser}/>} */}
       <Routes>
-        <Route exact path= "/" element={<HomePage updateUser= {updateUser}/>}></Route>
-        <Route path= "/destinations" element={<DestinationList/>}></Route>
+        <Route exact path= "/" element={<HomePage userData={userData} updateUser= {updateUser}/>}></Route>
+        <Route path= "/destinations" element={<DestinationList userData={userData} destinationsData={destinationsData}/>}></Route>
         <Route path= "/reviews" element= {<ReviewList/>}></Route>
         <Route path= "/profile" element= {<Profile/>}></Route>
+        <Route path= "/about" element= {<About/>}></Route>
       </Routes>
     </>
   )

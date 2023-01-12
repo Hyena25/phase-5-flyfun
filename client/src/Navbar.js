@@ -18,6 +18,7 @@ function Navbar({updateUser}){
       })
     }}
 
+    
     return(
     <>
         <div>
@@ -25,10 +26,10 @@ function Navbar({updateUser}){
                 <button>Destinations</button>
             </NavLink>
             <NavLink to= "/reviews">
-                <button>Destinations</button>
+                <button>Reviews</button>
             </NavLink>
             <NavLink to= "/profile">
-                <button>Destinations</button>
+                <button>Profile</button>
             </NavLink>
             <button onClick={handleLogOut}>Log Out</button>
         </div>
