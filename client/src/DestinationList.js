@@ -11,7 +11,7 @@ function DestinationList ({userData, destinationsData, setDestinationsData}) {
     
     return(
         <>
-        <DestinationForm setDestinationsData={setDestinationsData} destinationsData={destinationsData}/>
+        <DestinationForm userData = {userData} setDestinationsData={setDestinationsData} destinationsData={destinationsData}/>
         <h1>Destination List</h1>
         {renderDestinations}
         </>

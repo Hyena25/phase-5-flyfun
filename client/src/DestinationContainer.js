@@ -1,8 +1,9 @@
 import { Card, Image } from 'semantic-ui-react'
 
-function DestinationContainer ({destinationsObj, userData}){
+function DestinationContainer ({destinationsObj, userData, setDestinationData}){
     // console.log(destinationsObj, userData)
-    
+    // const delete
+
     return(
         <div className = "destination-container">
         <Card >
