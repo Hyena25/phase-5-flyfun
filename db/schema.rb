@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 2023_01_10_161808) do
   create_table "destinations", force: :cascade do |t|
     t.string "image"
     t.string "title"
-    t.string "location"
+    t.string "city"
+    t.string "country"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

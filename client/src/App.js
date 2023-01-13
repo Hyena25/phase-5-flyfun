@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import HomePage from "./HomePage";
 import DestinationList from "./DestinationList";
-import ReviewList from "./ReviewList";
 import Profile from "./Profile";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -56,7 +55,7 @@ function App() {
       <Routes>
         <Route exact path= "/" element={<HomePage userData={userData} updateUser= {updateUser}/>}></Route>
         <Route path= "/destinations" element={<DestinationList userData={userData} setDestinationsData={setDestinationsData} destinationsData={destinationsData}/>}></Route>
-        <Route path= "/reviews" element= {<ReviewList/>}></Route>
+        {/* <Route path= "/reviews" element= {<ReviewList destinationsData={destinationsData} userData={userData}/>}></Route> */}
         <Route path= "/profile" element= {<Profile/>}></Route>
         <Route path= "/about" element= {<About/>}></Route>
       </Routes>

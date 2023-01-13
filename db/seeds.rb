@@ -16,11 +16,11 @@ user2 = User.create(full_name: 'Brenda Lee', username: "brenda123", email: "bren
 user3 = User.create(full_name: 'Luis Lopez', username: "luis123", email: "luis@gmail.com", password: "luis")
 
 puts "creating destinations"
-destination4 = Destination.create(image: "https://cdn.britannica.com/88/189788-050-9B5DB3A4/Al-Dayr-Petra-Jordan.jpg", title: "Petra", location: "Petra, Jordan", description: "Beautiful ruins" )
-destination5 = Destination.create(image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgkWrswVUP2mqtg3PcwfSRQD4UtEBz7J3JtCVCrY2aGyrWHsgwXO-OP77PMwti1AKmSvk&usqp=CAU", title: "Chichén Itzá", location: "Yucatán Peninsula, Mexico", description: "Very well preserved" )
-destination1 = Destination.create(image: "https://cdn.britannica.com/89/179589-138-3EE27C94/Overview-Great-Wall-of-China.jpg?w=800&h=450&c=crop", title: "Great wall of China", location: "Beijing, China", description: "Huge wall" )
-destination2 = Destination.create(image: "https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/A-Corbis-42-24002457_sbfkds.jpg", title: "Christ the Redeemer", location: "Rio De Janeiro, Brazil", description: "Huge wall" )
-destination3 = Destination.create(image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGFqJTIwbWFoYWx8ZW58MHx8MHx8&w=1000&q=80", title: "Taj Mahal", location: "Agra, India", description: "Wonderful architecture")
+destination4 = Destination.create(image: "https://cdn.britannica.com/88/189788-050-9B5DB3A4/Al-Dayr-Petra-Jordan.jpg", title: "Petra", city: "Petra", country: "Jordan", description: "Beautiful ruins" )
+destination5 = Destination.create(image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgkWrswVUP2mqtg3PcwfSRQD4UtEBz7J3JtCVCrY2aGyrWHsgwXO-OP77PMwti1AKmSvk&usqp=CAU", title: "Chichén Itzá", city: "Yucatán Peninsula", country: "Mexico", description: "Very well preserved" )
+destination1 = Destination.create(image: "https://cdn.britannica.com/89/179589-138-3EE27C94/Overview-Great-Wall-of-China.jpg?w=800&h=450&c=crop", title: "Great wall of China", city: "Beijing", country: "China", description: "Huge wall" )
+destination2 = Destination.create(image: "https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/A-Corbis-42-24002457_sbfkds.jpg", title: "Christ the Redeemer", city: "Rio De Janeiro", country: " Brazil", description: "Such a beatiful statue" )
+destination3 = Destination.create(image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dGFqJTIwbWFoYWx8ZW58MHx8MHx8&w=1000&q=80", title: "Taj Mahal", city: "Agra", country: "India", description: "Wonderful architecture")
 
 puts "creating reviews..."
 Review.create(star_rating: rand(0..5), comment: "Amazing Place", user_id: user1.id, destination_id: destination1.id )

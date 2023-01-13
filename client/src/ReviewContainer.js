@@ -1,8 +1,12 @@
 
+function ReviewContainer({review, setReviews, setInput, setRatingInput }){
 
-function ReviewContainer(){
+    console.log(review)
     return(
-        <></>
+        <>
+            <p>{review.comment}</p>
+            <p>{review.star_rating}</p>
+        </>
     )
 }
 

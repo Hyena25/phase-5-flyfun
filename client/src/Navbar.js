@@ -25,9 +25,6 @@ function Navbar({updateUser}){
             <NavLink to= "/destinations">
                 <button>Destinations</button>
             </NavLink>
-            <NavLink to= "/reviews">
-                <button>Reviews</button>
-            </NavLink>
             <NavLink to= "/profile">
                 <button>Profile</button>
             </NavLink>
