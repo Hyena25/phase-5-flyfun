@@ -36,7 +36,7 @@ function ReviewList({destinationId, userData}){
 
     const renderReviews = reviews.map(review => {
         return (
-            <ReviewContainer key= {review.id} review={review} setReviews={setReviews} setInput={setInput} setRatingInput={setRatingInput}/>
+            <ReviewContainer key= {review.id} review={review} setReviews={setReviews} userData={userData}/>
         )
     })
 
@@ -46,7 +46,7 @@ function ReviewList({destinationId, userData}){
             {renderReviews}
             <form onSubmit={handleSubmit}>
                 <input type='text' placeholder= "enter your review" value={input} onChange={ e => setInput(e.target.value)}/>
-                <input type='number' placeholder= "enter your review rating" value={ratingInput} onChange={ e => setRatingInput(e.target.value)}/>
+                <input type='number' placeholder= "enter your review rating" min="1" max="5" value={ratingInput} onChange={ e => setRatingInput(e.target.value)}/>
                 <button>Add your review</button>
             </form>
         </>

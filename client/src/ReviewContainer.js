@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-function ReviewContainer({review, setReviews, setInput, setRatingInput }){
+function ReviewContainer({review, setReviews, userData}){
 
     const [reviewEdit, setReviewEdit] = useState("")
     const [renderEdit, setEdit] = useState(false)
@@ -47,7 +47,7 @@ function ReviewContainer({review, setReviews, setInput, setRatingInput }){
         })
         .then( () => { deleteReview(review.id)} )
     }
-    
+
     return(
         <>
             <p>{review.comment}</p>
@@ -71,8 +71,12 @@ function ReviewContainer({review, setReviews, setInput, setRatingInput }){
                 </form>
             ) : (
                 <>
-                    <button onClick={() => setEdit(!renderEdit)}>Edit</button>
+                     { review.user.id === userData.id ? (
+                    <button onClick={handleUpdate}>Edit</button>
+                    ) : null}
+                    { review.user.id === userData.id ? (
                     <button onClick={handleDelete}>Delete</button>
+                    ) : null}
                 </>
             )}
         </>
