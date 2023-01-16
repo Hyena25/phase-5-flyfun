@@ -56,7 +56,7 @@ function App() {
         <Route exact path= "/" element={<HomePage userData={userData} updateUser= {updateUser}/>}></Route>
         <Route path= "/destinations" element={<DestinationList userData={userData} setDestinationsData={setDestinationsData} destinationsData={destinationsData}/>}></Route>
         {/* <Route path= "/reviews" element= {<ReviewList destinationsData={destinationsData} userData={userData}/>}></Route> */}
-        <Route path= "/profile" element= {<Profile/>}></Route>
+        <Route path= "/profile" element= {<Profile userData ={userData} updateUser={updateUser}/>}></Route>
         <Route path= "/about" element= {<About/>}></Route>
       </Routes>
     </>
