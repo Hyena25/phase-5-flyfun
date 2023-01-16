@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
-function Navbar({updateUser}){
+function Navbar({updateUser, currentUser}){
 
     let navigate = useNavigate()
 
@@ -20,7 +20,9 @@ function Navbar({updateUser}){
 
     
     return(
-    <>
+  <>
+    {currentUser ? 
+      (
         <div>
             <NavLink to= "/destinations">
                 <button>Destinations</button>
@@ -30,8 +32,37 @@ function Navbar({updateUser}){
             </NavLink>
             <button onClick={handleLogOut}>Log Out</button>
         </div>
-    </>
+      ) :
+      (
+        <>
+          <NavLink to= "/login">
+              <button>Login</button>
+          </NavLink>
+          <NavLink to= "/signup">
+              <button>Signup</button>
+          </NavLink>
+          <NavLink to= "/about">
+              <button>About</button>
+          </NavLink>
+        </>
+      )
+    }
+  </>
     )
+  //   {customer?
+                
+  //     (
+  //     <div className="loggedin"
+  //     <NavLink className="logout" to="/logout">Logout</NavLink>
+  //     </div>
+  //     ) : (
+  //     <div className="loggedout">
+  //     <NavLink className="login" to="/login">Login</NavLink>
+  //     <NavLink className="signup" to="/signup">Signup</NavLink>
+  //     </div>
+  //     )
+  // }
+
 }
 
 export default Navbar

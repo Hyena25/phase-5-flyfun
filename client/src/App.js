@@ -8,6 +8,7 @@ import About from "./About";
 
 
 
+
 function App() {
   const [destinationsData, setDestinationsData] = useState([])
   const [currentUser, setCurrentUser] = useState(false)
@@ -50,7 +51,7 @@ function App() {
   if(errors) return <h1>{errors}</h1>
   return (
     <>
-      {userData.id ? <Navbar updateUser = {updateUser}/> : null}
+      {userData.id ? <Navbar updateUser = {updateUser} currentUser = {currentUser}/> : null}
       {/* {userData.id ? null : <NavbarHome updateUser = {updateUser}/>} */}
       <Routes>
         <Route exact path= "/" element={<HomePage userData={userData} updateUser= {updateUser}/>}></Route>

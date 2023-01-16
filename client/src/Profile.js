@@ -4,7 +4,7 @@ function Profile ({ userData, updateUser }) {
   const [fullName, setFullName] = useState(userData.full_name);
   const [username, setUsername] = useState(userData.username);
   const [email, setEmail] = useState(userData.email);
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(false);
 
   const handleSubmit = (event) => {
