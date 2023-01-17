@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :reviews
   resources :destinations, only: [:index, :show, :create, :destroy]
-  resources :users, only: [:index, :show, :create, :update]
+  resources :users, only: [:show, :create, :update]
 
 
   get "destinationreviews/:id", to: "destinations#show_destinations"
