@@ -1,10 +1,10 @@
-import Signup from "./Signup"
-import Login from "./Login"
+// import Signup from "./Signup"
+// import Login from "./Login"
 // import NavbarHome from "./NavbarHome";
 
 
 
-function HomePage ({updateUser}){
+function HomePage (){
     return(
         <>
             {/* <NavbarHome updateUser={updateUser}/> */}
@@ -13,8 +13,8 @@ function HomePage ({updateUser}){
             <Route path= "/signup" element={<Signup updateUser={updateUser}/>}></Route>
             <Route path= "/login" element={<Login updateUser={updateUser}/>}></Route>
             </Routes> */}
-            <Login updateUser= {updateUser}/>
-            <Signup updateUser={updateUser}/>
+            {/* <Login updateUser= {updateUser}/>
+            <Signup updateUser={updateUser}/> */}
             
         </>
     )

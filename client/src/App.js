@@ -5,6 +5,8 @@ import DestinationList from "./DestinationList";
 import Profile from "./Profile";
 import Navbar from "./Navbar";
 import About from "./About";
+import Signup from "./Signup"
+import Login from "./Login"
 
 
 function App() {
@@ -49,14 +51,14 @@ function App() {
   if(errors) return <h1>{errors}</h1>
   return (
     <>
-      {userData.id ? <Navbar updateUser = {updateUser} currentUser = {currentUser}/> : null}
-      {/* {userData.id ? null : <NavbarHome updateUser = {updateUser}/>} */}
+      {<Navbar userData = {userData} updateUser = {updateUser} currentUser = {currentUser}/>}
       <Routes>
         <Route exact path= "/" element={<HomePage userData={userData} updateUser= {updateUser}/>}></Route>
         <Route path= "/destinations" element={<DestinationList userData={userData} setDestinationsData={setDestinationsData} destinationsData={destinationsData}/>}></Route>
-        {/* <Route path= "/reviews" element= {<ReviewList destinationsData={destinationsData} userData={userData}/>}></Route> */}
-        <Route path= "/profile" element= {<Profile userData ={userData} updateUser={updateUser}/>}></Route>
+        <Route path= "/signup" element= {<Signup updateUser = {updateUser}/>}></Route>
+        <Route path= "/login" element= {<Login updateUser = {updateUser}/>}></Route>
         <Route path= "/about" element= {<About/>}></Route>
+        <Route path= "/profile" element= {<Profile userData ={userData} updateUser={updateUser}/>}></Route>
       </Routes>
     </>
   )

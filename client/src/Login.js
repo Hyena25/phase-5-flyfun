@@ -43,6 +43,7 @@ function Login({updateUser}){
   
     return(
         <div>
+            <h1>Login Page</h1>
             <form onSubmit = {handleSubmit}>
                 <input
                     type = "text"

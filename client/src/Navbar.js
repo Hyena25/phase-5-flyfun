@@ -35,6 +35,9 @@ function Navbar({updateUser, currentUser}){
       ) :
       (
         <>
+          <NavLink to= "/">
+                <button>Home</button>
+          </NavLink>
           <NavLink to= "/login">
               <button>Login</button>
           </NavLink>
@@ -48,7 +51,7 @@ function Navbar({updateUser, currentUser}){
       )
     }
   </>
-    )
+  )
   //   {customer?
                 
   //     (

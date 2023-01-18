@@ -50,8 +50,7 @@ function ReviewContainer({review, setReviews, userData}){
 
     return(
         <>
-            <p>{review.user.username}</p>
-            <p>{review.comment} ⭐{review.star_rating}</p>
+            <p>{review.user.username} : {review.comment} ⭐{review.star_rating}</p>
             {/* <p>{review.star_rating}</p> */}
             { renderEdit ? (
                 <form onSubmit={handleUpdate}>
