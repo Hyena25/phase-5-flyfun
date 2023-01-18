@@ -42,7 +42,7 @@ function DestinationList({ userData, destinationsData, setDestinationsData }) {
         onChange={(e) => setSearchBar(e.target.value)}
       />
       <select value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
-        <option value="">All countries</option>
+        <option value="All countries">All countries</option>
         {Array.from(new Set(destinationsData.map((d) => d.country))).map((country) => (
           <option key={country} value={country}>
             {country}
@@ -51,7 +51,7 @@ function DestinationList({ userData, destinationsData, setDestinationsData }) {
         }
       </select>
       <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
-        <option value="">All cities</option>
+        <option value="All cities">All cities</option>
         {Array.from(new Set(destinationsData.map((d) => d.city))).map((city) => (
           <option key={city} value={city}>
             {city}

@@ -3,7 +3,7 @@ import { useState } from "react"
 
 function ReviewContainer({review, setReviews, userData}){
 
-    const [reviewEdit, setReviewEdit] = useState("")
+    // const [reviewEdit, setReviewEdit] = useState("")
     const [renderEdit, setEdit] = useState(false)
     const [updateComment, setUpdateComment] = useState(review.comment)
     const [updateRating, setUpdateRating] = useState(review.star_rating)
@@ -51,7 +51,7 @@ function ReviewContainer({review, setReviews, userData}){
     return(
         <>
             <p>{review.user.username}</p>
-            <p>{review.comment}  ⭐{review.star_rating}</p>
+            <p>{review.comment} ⭐{review.star_rating}</p>
             {/* <p>{review.star_rating}</p> */}
             { renderEdit ? (
                 <form onSubmit={handleUpdate}>
