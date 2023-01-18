@@ -4,10 +4,15 @@ import ReviewList from "./ReviewList";
 
 function DestinationContainer ({destinationsObj, userData, setDestinationsData}){
     const [showReview, setShowReview] = useState (false)
+    // const [favorite, setFavorite] = useState(false)
 
     const flipDestinationContainer = () => {
         setShowReview(!showReview)
     }
+
+    // favoriteDestination = () => {
+
+    // }
 
     // const deleteDestination = destinationId => {
     //     setDestinationsData(currentDestination => currentDestination.filter(destination => destination.id !== destinationId))
