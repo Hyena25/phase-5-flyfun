@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-function Profile ({ userData, updateUser }) {
-  const [fullName, setFullName] = useState(userData.full_name);
-  const [username, setUsername] = useState(userData.username);
-  const [email, setEmail] = useState(userData.email);
+function Profile ({ user, updateUser }) {
+  const [fullName, setFullName] = useState(user.full_name);
+  const [username, setUsername] = useState(user.username);
+  const [email, setEmail] = useState(user.email);
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState(false);
 
@@ -15,7 +15,7 @@ function Profile ({ userData, updateUser }) {
         email: email, 
         password: password
     };
-    fetch(`/users/${userData.id}`, {
+    fetch(`/update_user`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -38,6 +38,7 @@ function Profile ({ userData, updateUser }) {
       }
     });
   }
+
 
   return (
     <>

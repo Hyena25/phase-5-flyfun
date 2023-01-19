@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     def update
         current_user.update(new_user_params)
-        render json: current_user, status: :accepted
+        render json: current_user
     end
 
     private
