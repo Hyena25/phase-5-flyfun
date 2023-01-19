@@ -28,9 +28,10 @@ function Navbar({updateUser, currentUser}){
                 <button>Destinations</button>
             </NavLink>
             <NavLink to= "/profile">
-                <button>Edit Profile</button>
+                <button>Edit My Profile</button>
             </NavLink>
             <button onClick={handleLogOut}>Log Out</button>
+            <p>Welcome {currentUser.username} !!</p>
         </div>
       ) :
       (
@@ -52,19 +53,6 @@ function Navbar({updateUser, currentUser}){
     }
   </>
   )
-  //   {customer?
-                
-  //     (
-  //     <div className="loggedin"
-  //     <NavLink className="logout" to="/logout">Logout</NavLink>
-  //     </div>
-  //     ) : (
-  //     <div className="loggedout">
-  //     <NavLink className="login" to="/login">Login</NavLink>
-  //     <NavLink className="signup" to="/signup">Signup</NavLink>
-  //     </div>
-  //     )
-  // }
 
 }
 

@@ -10,7 +10,10 @@ function Profile ({ userData, updateUser }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const userData = {
-        full_name: fullName, username: username, email: email, password: password
+        full_name: fullName, 
+        username: username, 
+        email: email, 
+        password: password
     };
     fetch(`/users/${userData.id}`, {
       method: 'PATCH',
