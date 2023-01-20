@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_10_161808) do
-
+ActiveRecord::Schema[7.0].define(version: 2023_01_20_165946) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,8 +20,16 @@ ActiveRecord::Schema.define(version: 2023_01_10_161808) do
     t.string "city"
     t.string "country"
     t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -30,8 +37,8 @@ ActiveRecord::Schema.define(version: 2023_01_10_161808) do
     t.string "comment"
     t.bigint "destination_id", null: false
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["destination_id"], name: "index_reviews_on_destination_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -41,10 +48,11 @@ ActiveRecord::Schema.define(version: 2023_01_10_161808) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "destinations"
   add_foreign_key "reviews", "users"
 end

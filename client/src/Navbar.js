@@ -30,6 +30,9 @@ function Navbar({updateUser, currentUser}){
             <NavLink to= "/profile">
                 <button>Edit My Profile</button>
             </NavLink>
+            <NavLink to= "/messages">
+              <button>Messages</button>
+            </NavLink>
             <button onClick={handleLogOut}>Log Out</button>
             <p>Welcome {currentUser.username} !!</p>
         </div>

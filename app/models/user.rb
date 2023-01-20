@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
     has_many :reviews 
+    has_many :messages
     has_many :destinations, through: :reviews
 
     # validates :username, length: { minimum: 8 }

@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import About from "./About";
 import Signup from "./Signup"
 import Login from "./Login"
+import Messages from "./Messages"
 
 
 function App() {
@@ -17,7 +18,6 @@ function App() {
 
   const updateUser = (user) => setCurrentUser(user)
 
-  console.log(currentUser)
 
   useEffect(() => {
     fetch("/authorized_user")
@@ -60,7 +60,8 @@ function App() {
         <Route path= "/signup" element= {<Signup updateUser = {updateUser}/>}></Route>
         <Route path= "/login" element= {<Login updateUser = {updateUser}/>}></Route>
         <Route path= "/about" element= {<About/>}></Route>
-        <Route path= "/profile" element= {<Profile user ={userData} updateUser={setCurrentUser}/>}></Route>
+        <Route path= "/profile" element= {<Profile user= {userData} updateUser={setCurrentUser}/>}></Route>
+        <Route path= "/messages" element= {<Messages userData= {userData} />}></Route>
       </Routes>
     </>
   )
