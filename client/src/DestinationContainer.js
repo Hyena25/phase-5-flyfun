@@ -1,5 +1,6 @@
 import { Card, Image, Icon } from 'semantic-ui-react'
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import ReviewList from "./ReviewList";
 
 
@@ -7,13 +8,25 @@ function DestinationContainer ({destinationsObj, userData, setDestinationsData})
     const [showReview, setShowReview] = useState (false)
     const [favorite, setFavorite] = useState(false)
     // const [unfavorite, setUnfavorite] = useState(false)
-
+    let navigate = useNavigate()
     const flipDestinationContainer = () => {
         setShowReview(!showReview)
     }
 
     const handleFavorite = () => {
         setFavorite(!favorite)
+        setDestinationsData(prev=> prev.map(destination=> 
+        destination.id === destinationsObj.id ? {...destination, isFavorite: !destination.isFavorite} : destination))
+        if(destinationsObj.isFavorite){ 
+            fetch (`/favorites/${destinationsObj.favoriteId}`, {method:"DELETE"})}
+        else{
+            fetch("/favorites",{
+                method:"POST",
+                headers:{"Content-Type": "application/json"},
+                body: JSON.stringify({user_id: userData.id, destination_id: destinationsObj.id})
+            })
+            .then(() => navigate('/bucket'))
+        }
     }
 
     // const deleteDestination = destinationId => {
@@ -48,7 +61,7 @@ function DestinationContainer ({destinationsObj, userData, setDestinationsData})
             </Card.Content> 
             <div onClick= {handleFavorite}> 
             Add to Bucket List 
-            {favorite ?
+            {destinationsObj.isFavorite ?
             <Icon name='star' color='yellow'/>
             :
             <Icon name='star outline' color='yellow'/>

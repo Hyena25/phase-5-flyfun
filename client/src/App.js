@@ -8,6 +8,7 @@ import About from "./About";
 import Signup from "./Signup"
 import Login from "./Login"
 import Messages from "./Messages"
+import BucketList from "./BucketList"
 
 
 function App() {
@@ -41,6 +42,13 @@ function App() {
         res.json().then(data => setErrors(data.error))
       }
     })
+    .then(()=>{
+      fetch("/favorites")
+      .then(res => res.json())
+      .then(res => res.map(obj =>
+      setDestinationsData(prev=> prev.map(destination=> 
+      destination.id===obj.destination.id ? {...destination, isFavorite: true, favoriteId: obj.id} : destination))))
+    })
   }
 
   useEffect( () =>{
@@ -62,6 +70,7 @@ function App() {
         <Route path= "/about" element= {<About/>}></Route>
         <Route path= "/profile" element= {<Profile user= {userData} updateUser={setCurrentUser}/>}></Route>
         <Route path= "/messages" element= {<Messages userData= {userData} />}></Route>
+        <Route path= "/bucket" element= {<BucketList setDestinationsData = {setDestinationsData} destinationsData = {destinationsData} userData= {userData} />}></Route>
       </Routes>
     </>
   )
