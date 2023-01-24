@@ -42,7 +42,7 @@ function DestinationForm({destinationsData, setDestinationsData, userData}){
     }
     return (
         <>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
             <input onChange={(e) => setNewDestinationObj({...newDestinationObj, image: e.target.value})} 
             name="image" type="text" value={newDestinationObj.image} placeholder="Image"
             />
@@ -56,7 +56,7 @@ function DestinationForm({destinationsData, setDestinationsData, userData}){
             name="description" type="text" value={newDestinationObj.description} placeholder="Description"
             />
             <button>Add Your Destination</button>
-        </form>
+        </form> */}
         </>
     )
 }

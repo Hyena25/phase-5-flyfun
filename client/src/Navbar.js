@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import { Menu, Button } from 'semantic-ui-react'
 
 function Navbar({updateUser, currentUser}){
 
@@ -20,45 +21,46 @@ function Navbar({updateUser, currentUser}){
 
     
     return(
-  <>
-    {currentUser ? 
-      (
-        <div>
-            <NavLink to= "/destinations">
-                <button>Destinations</button>
-            </NavLink>
-            <NavLink to= "/profile">
-                <button>Edit My Profile</button>
-            </NavLink>
-            <NavLink to= "/bucket">
-                <button>Bucket List</button>
-            </NavLink>
-            <NavLink to= "/messages">
-              <button>Messages</button>
-            </NavLink>
-            <button onClick={handleLogOut}>Log Out</button>
-            <p>Welcome {currentUser.username} !!</p>
-        </div>
-      ) :
-      (
-        <>
-          <NavLink to= "/">
-                <button>Home</button>
-          </NavLink>
-          <NavLink to= "/login">
-              <button>Login</button>
-          </NavLink>
-          <NavLink to= "/signup">
-              <button>Signup</button>
-          </NavLink>
-          <NavLink to= "/about">
-              <button>About</button>
-          </NavLink>
-        </>
+      <Menu stackable>
+        {currentUser ? 
+          (
+            <>
+                <Menu.Item as={NavLink} to= "/destinations">
+                    Destinations
+                </Menu.Item>
+                <Menu.Item as={NavLink} to= "/profile">
+                    Edit My Profile
+                </Menu.Item>
+                <Menu.Item as={NavLink} to= "/messages">
+                  Messages
+                </Menu.Item>
+                <Menu.Item>
+                    <Button onClick={handleLogOut}>Log Out</Button>
+                </Menu.Item>
+                <Menu.Item>
+                    Welcome {currentUser.username} !
+                </Menu.Item>
+            </>
+          ) :
+          (
+            <>
+              <Menu.Item as={NavLink} to= "/">
+                    Home
+              </Menu.Item>
+              <Menu.Item as={NavLink} to= "/login">
+                  Login
+              </Menu.Item>
+              <Menu.Item as={NavLink} to= "/signup">
+                  Signup
+              </Menu.Item>
+              <Menu.Item as={NavLink} to= "/about">
+                  About
+              </Menu.Item>
+            </>
+          )
+        }
+      </Menu>
       )
-    }
-  </>
-  )
 
 }
 

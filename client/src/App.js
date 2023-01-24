@@ -47,7 +47,7 @@ function App() {
       .then(res => res.json())
       .then(res => res.map(obj =>
       setDestinationsData(prev=> prev.map(destination=> 
-      destination.id===obj.destination.id ? {...destination, isFavorite: true, favoriteId: obj.id} : destination))))
+      destination.id === obj.destination.id ? {...destination, isFavorite: true, favoriteId: obj.id} : destination))))
     })
   }
 

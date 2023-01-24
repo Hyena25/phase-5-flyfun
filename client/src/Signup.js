@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 
 function Signup({updateUser}){
-
+    let navigate = useNavigate()
     const [submited, setSubmited] = useState (false) 
     const [signupData, setSignupData] = useState({ 
         full_name: "",
@@ -30,6 +31,7 @@ function Signup({updateUser}){
             if (res.ok){
                 res.json().then(user => {
                     updateUser(user)
+                    navigate('/destinations')
                 })
             }else{
                 res.json().then(json => setErrors(Object.entries(json.errors))) // for storing signup form errors

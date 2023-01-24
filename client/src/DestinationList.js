@@ -34,7 +34,7 @@ function DestinationList({ userData, destinationsData, setDestinationsData }) {
   return (
     <>
       <DestinationForm userData={userData} setDestinationsData={setDestinationsData} destinationsData={destinationsData} />
-      <h1>Destination List</h1>
+      <h1>Checkout these Destnations !</h1>
       <input
         type="text"
         placeholder="Search by title"
