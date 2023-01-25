@@ -63,7 +63,7 @@ function Messages ({userData}) {
         if(!messagesContainer) return;
         messagesContainer.scrollTop = messagesContainer.scrollHeight
     }
-    
+    console.log(messages)
     return (
         <Segment>
             <List>

@@ -34,8 +34,11 @@ function Navbar({updateUser, currentUser}){
                 <Menu.Item as={NavLink} to= "/messages">
                   Messages
                 </Menu.Item>
+                <Menu.Item as={NavLink} to= "/bucket">
+                  Bucket List
+                </Menu.Item>
                 <Menu.Item>
-                    <Button onClick={handleLogOut}>Log Out</Button>
+                    <Button className = "logout-button" onClick={handleLogOut}>Log Out</Button>
                 </Menu.Item>
                 <Menu.Item>
                     Welcome {currentUser.username} !

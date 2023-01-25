@@ -17,3 +17,105 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+/* SIGNUP CSS */
+.signup-input {
+  width: 50%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.signup-button {
+  background-color: blue;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background-color: darkblue;
+}
+
+.signup-error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+.signup-title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.signup-text-link {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.signup-text-link a {
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.signup-page {
+  background-image: url(https://wallpaperping.com/wp-content/uploads/2018/05/firewatch-widescreen-wallpaper.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGIN CSS */
+.login-page {
+  background-image: url(https://wallpaperbat.com/img/634763-clean-wallpaper.png);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.login-input {
+  width: 50%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.login-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #3e8e41;
+}
+
+.login-text-link {
+  color: white;
+  margin-top: 2rem;
+}
