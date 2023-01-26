@@ -1,5 +1,6 @@
 class DestinationsController < ApplicationController
-
+    # before_action is_admin only: [:create, :update, :destroy]
+    
     def index 
         render json: Destination.all, status: :ok
     end

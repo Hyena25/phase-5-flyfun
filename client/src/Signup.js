@@ -33,7 +33,7 @@ function Signup({updateUser}){
             if (res.ok){
                 res.json().then(user => {
                     updateUser(user)
-                    navigate('/destinations')
+                    navigate('/login')
                 })
             }else{
                 res.json().then(json => setErrors(Object.entries(json.errors)))

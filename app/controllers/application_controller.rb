@@ -12,6 +12,10 @@ class ApplicationController < ActionController::API
   def authorized_user
       return render json: { error: "Not authorized" }, status: :unauthorized unless current_user
   end
+
+  # def is_admin
+  #   request.headers["Authorization"] == "Admin"
+  # end
   
   private
 

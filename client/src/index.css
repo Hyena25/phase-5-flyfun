@@ -119,3 +119,14 @@ code {
   color: white;
   margin-top: 2rem;
 }
+
+.login-error-message{
+  color: blue;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+}

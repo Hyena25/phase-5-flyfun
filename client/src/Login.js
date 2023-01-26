@@ -71,6 +71,7 @@ function Login({updateUser}){
             <p className="login-text-link">
                 Don't have an account? <Link to="/signup">Signup here</Link>
             </p>
+            {errors? <div className = "login-error-message">{errors}</div>: null}
         </div>
     )
 }
