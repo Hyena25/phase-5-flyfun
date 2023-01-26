@@ -1,4 +1,4 @@
-import { Card, Image, Icon } from 'semantic-ui-react'
+import { Card, Image, Icon, Segment, Button } from 'semantic-ui-react'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import ReviewList from "./ReviewList";
@@ -44,15 +44,15 @@ function DestinationContainer ({destinationsObj, userData, setDestinationsData})
     return(
         <div className = "destination-container">
         {showReview ?
-            (<div className="destination-container-back">
-                <div className="destination-reviews">
+            (<Segment className = "destination-container">
+                <Segment className="destination-reviews">
                     <ReviewList destinationId={destinationsObj.id} userData={userData}/>
-                </div>
-                <button onClick={flipDestinationContainer}>Return to destination</button>
-            </div>)
+                </Segment>
+            <Button onClick={flipDestinationContainer} className='return-button'>Return to destination</Button>
+            </Segment>)
         :
         
-        (<Card >
+        (<Card className = "destination-card">
             <Image src= {destinationsObj.image} onClick={flipDestinationContainer} wrapped ui={false} />
             <Card.Content>
                 <Card.Header>{destinationsObj.title}</Card.Header>
@@ -60,12 +60,13 @@ function DestinationContainer ({destinationsObj, userData, setDestinationsData})
                 <Card.Description>{destinationsObj.description}</Card.Description>
             </Card.Content> 
             <div onClick= {handleFavorite}> 
-            Add to Bucket List 
-            {destinationsObj.isFavorite ?
-            <Icon name='star' color='yellow'/>
-            :
-            <Icon name='star outline' color='yellow'/>
-            }
+            {destinationsObj.isFavorite ? "Remove From Bucket List" : "Add To Bucket List"}
+            {destinationsObj.isFavorite ? (
+            <Icon name="star" color="yellow" />
+            ) : (
+            <Icon name="star outline" color="yellow" />
+            )}
+
             </div>
         </Card>)
         }

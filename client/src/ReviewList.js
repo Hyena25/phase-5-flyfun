@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import ReviewContainer from "./ReviewContainer"
+import { Container, Header, Form, Input, Button, List } from 'semantic-ui-react'
 
 function ReviewList({destinationId, userData}){
 
@@ -41,16 +42,30 @@ function ReviewList({destinationId, userData}){
     })
 
     return(
-        <>
-            <h2>Reviews :</h2>
-            {renderReviews}
-            <form onSubmit={handleSubmit}>
-                <input type='text' placeholder= "enter your review" value={input} onChange={ e => setInput(e.target.value)}/>
-                <input type='number' placeholder= "enter your review rating" min="1" max="5" value={ratingInput} onChange={ e => setRatingInput(e.target.value)}/>
-                <button>Add your review</button>
-            </form>
-        </>
+        <Container>
+            <Header as='h2'>Reviews :</Header>
+            <List>
+                {renderReviews}
+            </List>
+            <Form onSubmit={handleSubmit}>
+                <Input type='text' placeholder= "enter your review" value={input} onChange={ e => setInput(e.target.value)}/>
+                <Input type='number' placeholder= "enter your review rating" min="1" max="5" value={ratingInput} onChange={ e => setRatingInput(e.target.value)}/>
+                <Button type='submit'>Add your review</Button>
+            </Form>
+        </Container>
     )
+
+    // return(
+    //     <>
+    //         <h2>Reviews :</h2>
+    //         {renderReviews}
+    //         <form onSubmit={handleSubmit}>
+    //             <input type='text' placeholder= "enter your review" value={input} onChange={ e => setInput(e.target.value)}/>
+    //             <input type='number' placeholder= "enter your review rating" min="1" max="5" value={ratingInput} onChange={ e => setRatingInput(e.target.value)}/>
+    //             <button>Add your review</button>
+    //         </form>
+    //     </>
+    // )
 }
 
 export default ReviewList
